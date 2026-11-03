@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armoire à clés — FACILITY</title>
+<link rel="stylesheet" href="/static/kiosk/app.css">
+</head>
+<body data-screen="idle" data-door="closed" data-banner="none">
+
+<!-- Cadre d'alerte : bordure rouge fixe (aucun clignotement) -->
+<div id="alert-frame" aria-hidden="true"></div>
+
+<header class="topbar">
+  <img class="topbar__logo" src="/static/kiosk/img/facility_blanc.png" alt="FACILITY">
+  <div class="topbar__right">
+    <div class="clock"><span id="clock-time">--:--</span><span id="clock-date"></span></div>
+    <span class="topbar__site" id="site-name">Commune de Rixensart</span>
+    <button type="button" class="cfg-btn" id="btn-config" aria-label="Configuration">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 2h-.4a2 2 0 0 0-2 2v.2a2 2 0 0 1-1 1.7l-.4.3a2 2 0 0 1-2 0l-.2-.1a2 2 0 0 0-2.7.7l-.2.4a2 2 0 0 0 .7 2.7l.2.1a2 2 0 0 1 1 1.7v.6a2 2 0 0 1-1 1.7l-.2.1a2 2 0 0 0-.7 2.7l.2.4a2 2 0 0 0 2.7.7l.2-.1a2 2 0 0 1 2 0l.4.3a2 2 0 0 1 1 1.7v.2a2 2 0 0 0 2 2h.4a2 2 0 0 0 2-2v-.2a2 2 0 0 1 1-1.7l.4-.3a2 2 0 0 1 2 0l.2.1a2 2 0 0 0 2.7-.7l.2-.4a2 2 0 0 0-.7-2.7l-.2-.1a2 2 0 0 1-1-1.7v-.6a2 2 0 0 1 1-1.7l.2-.1a2 2 0 0 0 .7-2.7l-.2-.4a2 2 0 0 0-2.7-.7l-.2.1a2 2 0 0 1-2 0l-.4-.3a2 2 0 0 1-1-1.7V4a2 2 0 0 0-2-2Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      <span>Configuration</span>
+    </button>
+  </div>
+</header>
+
+<section class="statusbar">
+  <div class="statusbar__left">
+    <h1 class="title">Armoire à clés · <span id="cabinet-name">Armoire 01</span></h1>
+    <div class="user" id="user-pill" hidden>
+      <div class="user__avatar" id="user-initials">--</div>
+      <div class="user__text"><span class="user__name" id="user-name"></span></div>
+    </div>
+  </div>
+  <div class="statusbar__right">
+    <!-- Indicateur d'état de la porte -->
+    <div class="door" id="door" role="status" aria-live="polite">
+      <svg class="door__icon door__icon--closed" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path><path d="M12 15v2"></path></svg>
+      <svg class="door__icon door__icon--open" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.75-1.4"></path><path d="M12 15v2"></path></svg>
+      <svg class="door__icon door__icon--alert" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+      <div class="door__text">
+        <span class="door__label" id="door-label">Porte fermée</span>
+        <span class="door__sub" id="door-sub">Armoire sécurisée</span>
+      </div>
+    </div>
+    <button type="button" class="btn btn--primary" id="btn-end" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+      Terminer la session
+    </button>
+  </div>
+</section>
+
+<!-- Bannière : info (déverrouillée), porte ouverte, alerte -->
+<div class="banner" id="banner" hidden>
+  <div class="banner__msg">
+    <svg class="banner__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4h3a2 2 0 0 1 2 2v14"></path><path d="M2 20h3"></path><path d="M13 20h9"></path><path d="M10 12v.01"></path><path d="M13 4.56v16.16a1 1 0 0 1-1.24.97L5 20V5.56a2 2 0 0 1 1.52-1.94l4-1A2 2 0 0 1 13 4.56Z"></path></svg>
+    <span id="banner-text"></span>
+  </div>
+  <div class="banner__side">
+    <span class="banner__timer" id="banner-timer"></span>
+    <button type="button" class="btn btn--light btn--sm" id="btn-silence" hidden>Couper le son 2 min</button>
+  </div>
+</div>
+
+<main class="content">
+  <!-- Écran de veille -->
+  <section class="idle" id="screen-idle">
+    <div class="idle__reader">
+      <div class="ring"></div><div class="ring ring--2"></div>
+      <div class="idle__disc">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="15" rx="2"></rect><path d="M7 10h4"></path><path d="M17.5 7.5a5 5 0 0 1 0 7"></path><path d="M20 5a8.5 8.5 0 0 1 0 12"></path></svg>
+      </div>
+    </div>
+    <h2 class="idle__title">Veuillez présenter votre badge</h2>
+    <p class="idle__lead">Approchez votre badge du lecteur sous l'écran pour déverrouiller l'armoire à clés.</p>
+    <div class="idle__stats">
+      <div class="stat"><span class="stat__dot stat__dot--in"></span><b id="count-in">0</b><span>clés présentes</span></div>
+      <div class="stat"><span class="stat__dot stat__dot--out"></span><b id="count-out">0</b><span>empruntées</span></div>
+      <div class="stat"><span>Dernier mouvement</span><b class="stat__last" id="last-move">—</b></div>
+    </div>
+  </section>
+
+  <!-- Écran de session -->
+  <section class="session" id="screen-session">
+    <div class="keys">
+      <div class="keys__head">
+        <h2>Clés 01 – <span id="slots-max">30</span></h2>
+        <div class="filters" id="filters">
+          <button type="button" class="chip is-on" data-filter="all"><span class="chip__dot"></span>Toutes <span class="chip__n" id="f-all">0</span></button>
+          <button type="button" class="chip" data-filter="in"><span class="chip__dot chip__dot--in"></span>Présentes <span class="chip__n" id="f-in">0</span></button>
+          <button type="button" class="chip" data-filter="out"><span class="chip__dot chip__dot--out"></span>Empruntées <span class="chip__n" id="f-out">0</span></button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+    <aside class="log">
+      <div class="log__head"><h3>Journal des événements</h3><span class="live"><span class="live__dot"></span>En direct</span></div>
+      <ol class="log__list" id="log"></ol>
+      <div class="log__foot">
+        <span>Touchez une clé pour voir son historique</span>
+        <button type="button" class="log__top" id="btn-log-top" hidden>Haut de la liste ↑</button>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<!-- Accès aux pages de configuration : code vérifié par le serveur Flask -->
+<dialog class="login" id="dlg-login">
+  <form id="form-login" autocomplete="off">
+    <h2>Configuration</h2>
+    <p>Entrez le code maître, ou <b>passez votre badge</b> si vous êtes autorisé à configurer l'armoire.</p>
+    <label class="sr" for="admin-code">Code administrateur</label>
+    <div class="login__field">
+      <input type="password" id="admin-code" autocomplete="off" spellcheck="false">
+      <button type="button" class="login__eye" id="btn-eye" aria-label="Afficher le code">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      </button>
+    </div>
+    <p class="login__error" id="login-error" hidden></p>
+    <div class="osk" id="osk" aria-label="Clavier à l'écran"></div>
+    <div class="login__foot">
+      <button type="button" class="btn btn--light" id="btn-login-cancel">Annuler</button>
+      <button type="submit" class="btn btn--primary" id="btn-login-ok">Valider</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Historique d'une clé (toucher une carte de la grille) -->
+<dialog class="hist" id="dlg-hist">
+  <div class="hist__head">
+    <div>
+      <span class="hist__num" id="hist-num">#00</span>
+      <h2 id="hist-title">Clé</h2>
+      <p id="hist-sub"></p>
+    </div>
+    <button type="button" class="btn btn--light" id="btn-hist-close">Fermer</button>
+  </div>
+  <ol class="hist__list" id="hist-list"></ol>
+  <p class="hist__empty" id="hist-empty" hidden>Aucune sortie enregistrée pour cette clé.</p>
+</dialog>
+
+<!-- Veille : écran noir (l'écran lui-même est éteint par X) ; un toucher ou un badge le rallume -->
+<div class="sleep" id="sleep" hidden></div>
+
+<div class="flash" id="flash" hidden></div>
+<div class="sound-hint" id="sound-hint" hidden>Son bloqué par le navigateur — touchez l'écran pour l'activer</div>
+<div class="offline" id="offline" hidden><div><b>Connexion au serveur perdue</b><span>Reconnexion en cours…</span></div></div>
+
+<template id="tpl-key">
+  <article class="key">
+    <div class="key__top"><span class="key__num"></span><span class="key__chip"><span class="key__dot"></span><span class="key__status"></span></span></div>
+    <div class="key__where"><span class="key__building"></span><span class="key__zone"></span></div>
+    <span class="key__foot"></span>
+  </article>
+</template>
+
+<script src="/static/kiosk/audio.js"></script>
+<script src="/static/kiosk/app.js"></script>
+</body>
+</html>

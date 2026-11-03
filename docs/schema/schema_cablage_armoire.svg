@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="DejaVu Sans, Arial, sans-serif">
+<rect width="420" height="297" fill="#fff"/>
+<rect x="5" y="5" width="410" height="287" fill="none" stroke="#000" stroke-width="0.7"/>
+<rect x="14" y="18" width="34" height="22" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="14" y="16.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">PS1</text>
+<text x="31.0" y="24" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">ALIM 12 V</text>
+<text x="28" y="30" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">≥ 2 A</text>
+<text x="46.2" y="32.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">+12V</text>
+<text x="46.2" y="38.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">0V</text>
+<polyline points="48,31 54,31 54,11 375,11" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="58" y="9.8" font-size="2.8" text-anchor="start" font-weight="bold" fill="#000">+12V</text>
+<polyline points="48,37 52,37 52,42" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="52,42 52,45" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="49" y1="45" x2="55" y2="45" stroke="#000" stroke-width="0.45"/>
+<line x1="50" y1="46.2" x2="54" y2="46.2" stroke="#000" stroke-width="0.45"/>
+<line x1="51" y1="47.4" x2="53" y2="47.4" stroke="#000" stroke-width="0.45"/>
+<rect x="352" y="228" width="34" height="22" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="352" y="226.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">PS2</text>
+<text x="369.0" y="234" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">ALIM 5 V</text>
+<text x="369" y="240" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">3 A (ruban LED)</text>
+<text x="353.8" y="235.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">+5V</text>
+<text x="353.8" y="246.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">0V</text>
+<rect x="178" y="18" width="54" height="20" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="178" y="16.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">PC1</text>
+<text x="205.0" y="24" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">MINI-PC</text>
+<text x="205" y="30" font-size="2.5" text-anchor="middle" font-weight="normal" fill="#000">Ubuntu · Flask keybox</text>
+<text x="205" y="33.5" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#000" font-style="italic">/dev/serial/by-id/usb-1a86…</text>
+<polyline points="205,38 205,58" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="2,1.2"/>
+<text x="207" y="47" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">USB (alimentation 5 V</text>
+<text x="207" y="50" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">+ liaison série 115200)</text>
+<rect x="160" y="58" width="90" height="164" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="160" y="56.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">U1</text>
+<text x="205" y="66" font-size="3.6" text-anchor="middle" font-weight="bold" fill="#000">ARDUINO MEGA 2560</text>
+<text x="205" y="70.5" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000" font-style="italic">sketch armoire_cles v5</text>
+<text x="205" y="74.5" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000" font-style="italic">(CH340, USB)</text>
+<text x="205" y="56.5" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#000">USB</text>
+<text x="161.8" y="87.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">D2 (INT4)</text>
+<text x="161.8" y="99.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">D3 (INT5)</text>
+<text x="161.8" y="111.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">D8</text>
+<text x="161.8" y="123.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">D9</text>
+<text x="161.8" y="157.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">D4</text>
+<text x="161.8" y="207.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">GND</text>
+<text x="248.2" y="87.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">5V</text>
+<text x="248.2" y="105.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">D7</text>
+<text x="248.2" y="123.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">GND</text>
+<text x="248.2" y="157.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">D6</text>
+<text x="205" y="212" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">D20 … D49</text>
+<text x="205" y="216" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000" font-style="italic">(INPUT_PULLUP)</text>
+<rect x="18" y="60" width="54" height="88" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="18" y="58.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">U2</text>
+<text x="45.0" y="66" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">LECTEUR BADGE</text>
+<text x="45" y="70" font-size="2.5" text-anchor="middle" font-weight="normal" fill="#000">Wiegand 12 V · ID + IC</text>
+<text x="45" y="73.5" font-size="2.5" text-anchor="middle" font-weight="normal" fill="#000">sortie WG34</text>
+<text x="70.2" y="79.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">VCC +12V</text>
+<text x="73.5" y="77.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">rouge</text>
+<text x="70.2" y="87.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">D0</text>
+<text x="73.5" y="85.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">vert</text>
+<text x="70.2" y="99.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">D1</text>
+<text x="73.5" y="97.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">blanc</text>
+<text x="70.2" y="111.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">LED</text>
+<text x="73.5" y="109.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">bleu</text>
+<text x="70.2" y="123.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">BEEP</text>
+<text x="73.5" y="121.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">jaune</text>
+<text x="70.2" y="133.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">WG26/34</text>
+<text x="73.5" y="131.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">gris</text>
+<text x="70.2" y="143.1" font-size="2.8" text-anchor="end" font-weight="normal" fill="#000">GND</text>
+<text x="73.5" y="141.0" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">noir</text>
+<polyline points="72,78 86,78 86,11" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="86" cy="11" r="0.9" fill="#000"/>
+<polyline points="72,86 160,86" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="72,98 160,98" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="72,110 160,110" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="72,122 160,122" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="72,132 80,132 80,142" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="80" cy="142" r="0.9" fill="#000"/>
+<polyline points="72,142 92,142" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="92,142 92,145" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="89" y1="145" x2="95" y2="145" stroke="#000" stroke-width="0.45"/>
+<line x1="90" y1="146.2" x2="94" y2="146.2" stroke="#000" stroke-width="0.45"/>
+<line x1="91" y1="147.4" x2="93" y2="147.4" stroke="#000" stroke-width="0.45"/>
+<text x="81.5" y="137.5" font-size="2.2" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">gris → GND = WG34</text>
+<polyline points="160,156 120,156 120,162" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="120,162 120,169.5" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="120" cy="169.5" r="0.9" fill="#000"/>
+<line x1="120" y1="174.5" x2="117.2" y2="169.8" stroke="#000" stroke-width="0.4"/>
+<polyline points="120,174.5 120,182" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<ellipse cx="119.2" cy="172.0" rx="3.6" ry="5.2" fill="none" stroke="#000" stroke-width="0.3" stroke-dasharray="1,0.7"/>
+<text x="123.2" y="171.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">S1</text>
+<text x="123.2" y="174.6" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">reed porte</text>
+<polyline points="120,182 120,185" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="117" y1="185" x2="123" y2="185" stroke="#000" stroke-width="0.45"/>
+<line x1="118" y1="186.2" x2="122" y2="186.2" stroke="#000" stroke-width="0.45"/>
+<line x1="119" y1="187.4" x2="121" y2="187.4" stroke="#000" stroke-width="0.45"/>
+<text x="124" y="192" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">fermé = porte fermée</text>
+<text x="124" y="195.5" font-size="2.3" text-anchor="start" font-weight="normal" fill="#555" font-style="italic">ouvert = porte ouverte</text>
+<polyline points="160,206 140,206" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="140,206 140,209" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="137" y1="209" x2="143" y2="209" stroke="#000" stroke-width="0.45"/>
+<line x1="138" y1="210.2" x2="142" y2="210.2" stroke="#000" stroke-width="0.45"/>
+<line x1="139" y1="211.4" x2="141" y2="211.4" stroke="#000" stroke-width="0.45"/>
+<rect x="282" y="76" width="48" height="56" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="282" y="74.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">K1</text>
+<text x="306.0" y="82" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">RELAIS 1 VOIE</text>
+<text x="306" y="89" font-size="2.4" text-anchor="middle" font-weight="normal" fill="#000">module 5 V</text>
+<text x="283.8" y="87.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">DC+</text>
+<text x="283.8" y="105.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">IN1</text>
+<text x="283.8" y="123.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">DC−</text>
+<text x="331.5" y="90.8" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">COM</text>
+<text x="331.5" y="102.8" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">NC</text>
+<text x="331.5" y="114.8" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">NO</text>
+<rect x="294" y="96" width="8" height="12" fill="none" stroke="#000" stroke-width="0.35"/>
+<line x1="295" y1="106" x2="301" y2="98" stroke="#000" stroke-width="0.3"/>
+<polyline points="302,102 308,102" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round" stroke-dasharray="2,1.2"/>
+<polyline points="314,92 330,92" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="314" cy="92" r="0.9" fill="#000"/>
+<line x1="314" y1="92" x2="321" y2="103.3" stroke="#000" stroke-width="0.35"/>
+<polyline points="320,104 330,104" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="320,116 330,116" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="306" y="128" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555" font-style="italic">repos : COM–NC fermé</text>
+<polyline points="250,86 282,86" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="262" y="84.8" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">+5V</text>
+<polyline points="250,104 282,104" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="282,122 270,122 270,128" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="270,128 270,131" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="267" y1="131" x2="273" y2="131" stroke="#000" stroke-width="0.45"/>
+<line x1="268" y1="132.2" x2="272" y2="132.2" stroke="#000" stroke-width="0.45"/>
+<line x1="269" y1="133.4" x2="271" y2="133.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="250,122 258,122 258,128" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="258,128 258,131" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="255" y1="131" x2="261" y2="131" stroke="#000" stroke-width="0.45"/>
+<line x1="256" y1="132.2" x2="260" y2="132.2" stroke="#000" stroke-width="0.45"/>
+<line x1="257" y1="133.4" x2="259" y2="133.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="375,11 375,70" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="375,70 345,70 345,92 330,92" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="330,104 375,104 375,112" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<rect x="371" y="112" width="8" height="20" fill="#fff" stroke="#000" stroke-width="0.45"/>
+<line x1="371" y1="114" x2="379" y2="130" stroke="#000" stroke-width="0.3"/>
+<text x="366" y="119" font-size="2.8" text-anchor="end" font-weight="bold" fill="#000">L1</text>
+<text x="366" y="122.5" font-size="2.4" text-anchor="end" font-weight="normal" fill="#000">électro-aimant</text>
+<text x="366" y="125.5" font-size="2.4" text-anchor="end" font-weight="normal" fill="#000">(ventouse) 12 V</text>
+<polyline points="375,132 375,146" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="375" cy="146" r="0.9" fill="#000"/>
+<polyline points="375,146 375,149" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="372" y1="149" x2="378" y2="149" stroke="#000" stroke-width="0.45"/>
+<line x1="373" y1="150.2" x2="377" y2="150.2" stroke="#000" stroke-width="0.45"/>
+<line x1="374" y1="151.4" x2="376" y2="151.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="375,108 392,108" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="375" cy="108" r="0.9" fill="#000"/>
+<polyline points="392,108 392,125.0" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="389.8" y1="125.0" x2="394.2" y2="125.0" stroke="#000" stroke-width="0.45"/>
+<polygon points="389.8,129.0 394.2,129.0 392,125.0" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<polyline points="392,129.0 392,146" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="395.2" y="126.5" font-size="2.6" text-anchor="start" font-weight="bold" fill="#000">D1</text>
+<text x="395.2" y="129.6" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">1N4007</text>
+<polyline points="392,146 375,146" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="392" y="157" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555" font-style="italic">D1 : si la ventouse n'a pas</text>
+<text x="392" y="160" font-size="2.2" text-anchor="middle" font-weight="normal" fill="#555" font-style="italic">de diode intégrée</text>
+<rect x="300" y="176" width="44" height="36" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<text x="300" y="174.5" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">U3</text>
+<text x="322.0" y="182" font-size="3.4" text-anchor="middle" font-weight="bold" fill="#000">RUBAN WS2812B</text>
+<text x="322" y="191" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#000">50 LED</text>
+<text x="322" y="194.5" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000">0–29 : clés 1–30</text>
+<text x="322" y="197.5" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000">49 : voyant d'état</text>
+<text x="301.8" y="185.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">+5V</text>
+<text x="301.8" y="197.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">DIN</text>
+<text x="301.8" y="207.1" font-size="2.8" text-anchor="start" font-weight="normal" fill="#000">GND</text>
+<polyline points="250,156 270,156 270,196" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="270,196 280.0,196" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<rect x="280.0" y="194.4" width="10" height="3.2" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<polyline points="290.0,196 300,196" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="285.0" y="193.2" font-size="2.6" text-anchor="middle" font-weight="normal" fill="#000">R1  330 Ω</text>
+<polyline points="352,234 348,234 348,172 294,172 294,184 300,184" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="310" y="170.8" font-size="2.8" text-anchor="start" font-weight="bold" fill="#000">+5V LED</text>
+<circle cx="348" cy="190" r="0.9" fill="#000"/>
+<polyline points="348,190 356,190" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="356,190 356,200.0" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="353" y1="200.0" x2="359" y2="200.0" stroke="#000" stroke-width="0.5"/>
+<path d="M353,202.6 Q356,201.4 359,202.6" fill="none" stroke="#000" stroke-width="0.5"/>
+<polyline points="356,202.0 356,212" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="351.8" y="199.4" font-size="2.8" text-anchor="middle" font-weight="normal" fill="#000">+</text>
+<text x="360.5" y="200.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">C1</text>
+<text x="360.5" y="203.6" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">1000 µF</text>
+<polyline points="356,212 356,215" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="353" y1="215" x2="359" y2="215" stroke="#000" stroke-width="0.45"/>
+<line x1="354" y1="216.2" x2="358" y2="216.2" stroke="#000" stroke-width="0.45"/>
+<line x1="355" y1="217.4" x2="357" y2="217.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="300,206 292,206 292,214" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="292,214 292,217" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="289" y1="217" x2="295" y2="217" stroke="#000" stroke-width="0.45"/>
+<line x1="290" y1="218.2" x2="294" y2="218.2" stroke="#000" stroke-width="0.45"/>
+<line x1="291" y1="219.4" x2="293" y2="219.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="352,245 346,245 346,252" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="346,252 346,255" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="343" y1="255" x2="349" y2="255" stroke="#000" stroke-width="0.45"/>
+<line x1="344" y1="256.2" x2="348" y2="256.2" stroke="#000" stroke-width="0.45"/>
+<line x1="345" y1="257.4" x2="347" y2="257.4" stroke="#000" stroke-width="0.45"/>
+<polyline points="205,222 205,230" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="205" cy="230" r="0.9" fill="#000"/>
+<polyline points="150,230 262,230" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="150" y="228.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">bus D20 … D49 (une broche par clé)</text>
+<polyline points="160,230 160,236" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="160,236 160,242.5" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="160" cy="242.5" r="0.9" fill="#000"/>
+<line x1="160" y1="247.5" x2="157.2" y2="242.8" stroke="#000" stroke-width="0.4"/>
+<polyline points="160,247.5 160,254" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="163.2" y="244.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">SW1</text>
+<text x="160" y="262" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000">clé 1 · D20</text>
+<polyline points="160,254 160,257" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="157" y1="257" x2="163" y2="257" stroke="#000" stroke-width="0.45"/>
+<line x1="158" y1="258.2" x2="162" y2="258.2" stroke="#000" stroke-width="0.45"/>
+<line x1="159" y1="259.4" x2="161" y2="259.4" stroke="#000" stroke-width="0.45"/>
+<circle cx="160" cy="230" r="0.9" fill="#000"/>
+<polyline points="180,230 180,236" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="180,236 180,242.5" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="180" cy="242.5" r="0.9" fill="#000"/>
+<line x1="180" y1="247.5" x2="177.2" y2="242.8" stroke="#000" stroke-width="0.4"/>
+<polyline points="180,247.5 180,254" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="183.2" y="244.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">SW2</text>
+<text x="180" y="262" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000">clé 2 · D21</text>
+<polyline points="180,254 180,257" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="177" y1="257" x2="183" y2="257" stroke="#000" stroke-width="0.45"/>
+<line x1="178" y1="258.2" x2="182" y2="258.2" stroke="#000" stroke-width="0.45"/>
+<line x1="179" y1="259.4" x2="181" y2="259.4" stroke="#000" stroke-width="0.45"/>
+<circle cx="180" cy="230" r="0.9" fill="#000"/>
+<polyline points="240,230 240,236" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<polyline points="240,236 240,242.5" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<circle cx="240" cy="242.5" r="0.9" fill="#000"/>
+<line x1="240" y1="247.5" x2="237.2" y2="242.8" stroke="#000" stroke-width="0.4"/>
+<polyline points="240,247.5 240,254" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<text x="243.2" y="244.5" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">SW30</text>
+<text x="240" y="262" font-size="2.3" text-anchor="middle" font-weight="normal" fill="#000">clé 30 · D49</text>
+<polyline points="240,254 240,257" fill="none" stroke="#000" stroke-width="0.35" stroke-linejoin="round"/>
+<line x1="237" y1="257" x2="243" y2="257" stroke="#000" stroke-width="0.45"/>
+<line x1="238" y1="258.2" x2="242" y2="258.2" stroke="#000" stroke-width="0.45"/>
+<line x1="239" y1="259.4" x2="241" y2="259.4" stroke="#000" stroke-width="0.45"/>
+<circle cx="240" cy="230" r="0.9" fill="#000"/>
+<text x="210" y="246" font-size="6" text-anchor="middle" font-weight="normal" fill="#000">…</text>
+<text x="205" y="268" font-size="2.5" text-anchor="middle" font-weight="normal" fill="#555" font-style="italic">contact fermé (LOW) = clé présente</text>
+<rect x="14" y="160" width="92" height="108" fill="#fafafa" stroke="#000" stroke-width="0.5"/>
+<text x="17" y="166" font-size="3.2" text-anchor="start" font-weight="bold" fill="#000">NOTES</text>
+<text x="17" y="172.0" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">1. Toutes les masses sont communes : 0V PS1,</text>
+<text x="21" y="176.4" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">0V PS2 et GND de l'Arduino reliés.</text>
+<text x="17" y="180.8" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">2. L'Arduino est alimenté par l'USB du mini-PC.</text>
+<text x="17" y="185.2" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">3. D0/D1 du lecteur : mesurer ≤ 5 V au repos</text>
+<text x="21" y="189.6" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">avant branchement (sinon pont diviseur</text>
+<text x="21" y="194.0" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">10 kΩ / 6,8 kΩ sur chaque fil).</text>
+<text x="17" y="198.4" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">4. Ne rien brancher sur D0 / D1 de l'Arduino</text>
+<text x="21" y="202.8" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">(RX0 / TX0 = liaison USB).</text>
+<text x="17" y="207.2" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">5. Relais câblé sur NC : bobine alimentée</text>
+<text x="21" y="211.6" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">uniquement pendant l'ouverture (sécurité :</text>
+<text x="21" y="216.0" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">porte verrouillée si l'Arduino s'arrête).</text>
+<text x="17" y="220.4" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">6. Module relais actif à l'état bas</text>
+<text x="21" y="224.8" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">(RELAY_ACTIVE LOW dans le sketch).</text>
+<text x="17" y="229.2" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">7. LED et BEEP du lecteur : actifs à la masse,</text>
+<text x="21" y="233.60000000000002" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">pilotés en collecteur ouvert par D8 / D9.</text>
+<text x="17" y="238.0" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">8. Ordre des couleurs du ruban : COLOR_ORDER</text>
+<text x="21" y="242.4" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">(RGB ou GRB) en tête du sketch.</text>
+<text x="17" y="246.8" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">9. Contacts de clés, reed : pull-up internes,</text>
+<text x="21" y="251.2" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">aucune résistance externe.</text>
+<text x="17" y="255.60000000000002" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">10. Clés sans nom dans la configuration :</text>
+<text x="21" y="260.0" font-size="2.5" text-anchor="start" font-weight="normal" fill="#000">LED éteinte (non paramétrées).</text>
+<rect x="300" y="258" width="115" height="34" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<line x1="300" y1="270" x2="415" y2="270" stroke="#000" stroke-width="0.3"/>
+<line x1="300" y1="282" x2="415" y2="282" stroke="#000" stroke-width="0.3"/>
+<line x1="360" y1="270" x2="360" y2="292" stroke="#000" stroke-width="0.3"/>
+<text x="303" y="263.5" font-size="3.6" text-anchor="start" font-weight="bold" fill="#000">ARMOIRE À CLÉS CONNECTÉE</text>
+<text x="303" y="267.8" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">Commune de Rixensart · Service technique</text>
+<text x="303" y="275" font-size="2.6" text-anchor="start" font-weight="bold" fill="#000">Schéma de câblage</text>
+<text x="303" y="279" font-size="2.6" text-anchor="start" font-weight="normal" fill="#000">Arduino Mega 2560</text>
+<text x="363" y="275" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">Sketch : armoire_cles v5</text>
+<text x="363" y="279" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">Date : 01/11/2026</text>
+<text x="303" y="287.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">Format A3 · Folio 1/1</text>
+<text x="363" y="287.5" font-size="2.4" text-anchor="start" font-weight="normal" fill="#000">Rév. A</text>
+</svg>

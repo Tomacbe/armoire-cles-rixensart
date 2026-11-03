@@ -1,0 +1,15 @@
+# /etc/systemd/system/keybox.service — backend Flask de l'armoire à clés
+# Remplacer « armoire » par le compte local du mini-PC (User, WorkingDirectory, ExecStart).
+[Unit]
+Description=Key Box Flask Backend
+After=network.target
+
+[Service]
+User=armoire
+WorkingDirectory=/home/armoire/smart_key_box
+ExecStart=/home/armoire/smart_key_box/venv/bin/python app.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

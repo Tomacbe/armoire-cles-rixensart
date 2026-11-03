@@ -1,0 +1,8 @@
+# ~/.config/openbox/autostart
+# Remplacer /home/armoire par le dossier personnel du compte local.
+xrandr --auto
+# Sortie de l'écran : adapter (xrandr liste les sorties ; la prise VGA du mini-PC est vue comme DP-3)
+xrandr --output DP-3 --auto --primary
+# curseur caché dès qu'on touche l'écran, réaffiché quand la souris bouge (paquet unclutter-xfixes)
+unclutter --timeout 2 --hide-on-touch --start-hidden &
+/home/armoire/kiosk.sh &

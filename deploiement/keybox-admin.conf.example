@@ -1,0 +1,4 @@
+# /etc/systemd/system/keybox.service.d/admin.conf  (chmod 600)
+# Code demandé par le bouton « Configuration » de l'écran. Ne jamais le committer.
+[Service]
+Environment=KEYBOX_ADMIN_PASSWORD=ChangerCeCode

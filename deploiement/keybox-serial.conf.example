@@ -1,0 +1,5 @@
+# /etc/systemd/system/keybox.service.d/serial.conf
+# Nom fixe de l'adaptateur USB-série (ne change pas si l'Arduino est rebranché ailleurs).
+# Trouver le bon nom avec : ls /dev/serial/by-id/
+[Service]
+Environment=KEYBOX_SERIAL_PORT=/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0

@@ -1,0 +1,4 @@
+# À ajouter à la fin de ~/.bash_profile : démarre l'interface graphique sur tty1
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec startx -- -nocursor
+fi

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badges — Armoire à clés</title>
+<link rel="stylesheet" href="/static/admin/badges.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar__left">
+    <img src="/static/kiosk/img/facility_blanc.png" alt="FACILITY" class="bar__logo">
+    <nav class="tabs" aria-label="Configuration">
+      <a href="/admin/badges" class="tab is-on" aria-current="page">Badges</a>
+      <a href="/admin/cles" class="tab">Clés</a>
+      <a href="/admin/journal" class="tab">Journal</a>
+      <a href="/admin/reglages" class="tab">Réglages</a>
+    </nav>
+  </div>
+  <nav class="bar__nav">
+    <a class="bar__link" href="/">Écran de l'armoire</a>
+    <a class="bar__btn" href="/admin/logout">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+      Quitter
+    </a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="head">
+    <div>
+      <h1>Badges</h1>
+      <p class="lead" id="counts">Chargement…</p>
+    </div>
+    <div class="head__actions">
+      <a class="btn btn--light" href="/api/badges/export.csv">Exporter</a>
+      <button type="button" class="btn btn--light" id="btn-import">Importer CSV / Excel</button>
+      <button type="button" class="btn btn--primary" id="btn-add">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        Ajouter une personne
+      </button>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <span class="sr">Rechercher</span>
+      <input type="search" id="search" placeholder="Rechercher un nom ou un badge">
+    </label>
+    <div class="seg" id="filter" role="group" aria-label="Filtrer">
+      <button type="button" class="on" data-f="all">Tous</button>
+      <button type="button" data-f="on">Actifs</button>
+      <button type="button" data-f="off">Désactivés</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="table">
+      <thead><tr><th>Nom</th><th>Badge (UID)</th><th>Accès</th><th title="Peut ouvrir la configuration avec son badge">Configuration</th><th class="right">Actions</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden>Aucune personne. Ajoutez-en une ou importez un fichier.</p>
+  </div>
+</main>
+
+<!-- Ajout / modification -->
+<dialog id="dlg-user" class="dlg">
+  <form method="dialog" id="form-user" novalidate>
+    <h2 id="dlg-user-title">Ajouter une personne</h2>
+    <label for="f-name">Nom et prénom</label>
+    <input id="f-name" class="input" autocomplete="off" required>
+    <label for="f-uid">Badge (UID)</label>
+    <div class="uidrow">
+      <input id="f-uid" class="input mono" autocomplete="off" placeholder="ex. E9E5A8B0" required>
+      <button type="button" class="btn btn--outline" id="btn-scan">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="12" height="15" rx="2"></rect><path d="M17.5 7.5a5 5 0 0 1 0 7"></path><path d="M20 5a8.5 8.5 0 0 1 0 12"></path></svg>
+        Scanner le badge
+      </button>
+    </div>
+    <div class="scan" id="scan" hidden>
+      <span class="scan__dot"></span>
+      <span id="scan-text">Passez le badge sur le lecteur de l'armoire…</span>
+      <button type="button" class="link" id="scan-cancel">Annuler</button>
+    </div>
+    <label class="check"><input type="checkbox" id="f-active" checked> Accès actif</label>
+    <label class="check"><input type="checkbox" id="f-config"> Accès à la configuration avec ce badge
+      <small>(sur la borne : bouton Configuration puis passer le badge, ou repasser le badge pendant sa session)</small></label>
+    <p class="error" id="user-error" hidden></p>
+    <div class="dlg__foot">
+      <button type="button" class="btn btn--light" data-close>Annuler</button>
+      <button type="submit" class="btn btn--primary" id="btn-save">Enregistrer</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Import -->
+<dialog id="dlg-import" class="dlg dlg--wide">
+  <form method="dialog" id="form-import">
+    <h2>Importer des badges</h2>
+    <p class="lead">Fichier .csv ou .xlsx avec en première ligne les colonnes <b>nom</b>, <b>uid</b> et, si besoin, <b>actif</b> (oui / non).
+      Un badge déjà connu est mis à jour, jamais dupliqué. <a href="/api/badges/modele.csv">Télécharger le modèle</a></p>
+    <label class="drop" id="drop">
+      <input type="file" id="f-file" accept=".csv,.xlsx,.xls,.txt">
+      <span id="drop-text">Choisir un fichier ou le glisser ici</span>
+    </label>
+    <div id="preview" hidden>
+      <div class="sum" id="sum"></div>
+      <div class="preview">
+        <table class="table table--sm">
+          <thead><tr><th>Ligne</th><th>Nom</th><th>UID</th><th>Accès</th><th>Résultat</th></tr></thead>
+          <tbody id="prev-rows"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="error" id="import-error" hidden></p>
+    <div class="dlg__foot">
+      <button type="button" class="btn btn--light" data-close>Annuler</button>
+      <button type="button" class="btn btn--primary" id="btn-commit" disabled>Importer</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="/static/admin/badges.js"></script>
+<script src="/static/admin/osk.js"></script>
+</body>
+</html>

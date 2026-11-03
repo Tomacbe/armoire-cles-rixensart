@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clés — Armoire à clés</title>
+<link rel="stylesheet" href="/static/admin/badges.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar__left">
+    <img src="/static/kiosk/img/facility_blanc.png" alt="FACILITY" class="bar__logo">
+    <nav class="tabs" aria-label="Configuration">
+      <a href="/admin/badges" class="tab">Badges</a>
+      <a href="/admin/cles" class="tab is-on" aria-current="page">Clés</a>
+      <a href="/admin/journal" class="tab">Journal</a>
+      <a href="/admin/reglages" class="tab">Réglages</a>
+    </nav>
+  </div>
+  <nav class="bar__nav">
+    <a class="bar__link" href="/">Écran de l'armoire</a>
+    <a class="bar__btn" href="/admin/logout">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+      Quitter
+    </a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="head">
+    <div>
+      <h1>Clés</h1>
+      <p class="lead" id="counts">Chargement…</p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <span class="sr">Rechercher</span>
+      <input type="search" id="search" placeholder="Rechercher un numéro, un nom ou un bâtiment">
+    </label>
+  </div>
+
+  <div class="ledtest">
+    <div>
+      <b>Test des LED</b>
+      <span class="ledtest__status" id="led-status">Vérifie que l'Arduino reçoit les commandes et que chaque LED est à la bonne place.</span>
+    </div>
+    <div class="ledtest__actions">
+      <button type="button" class="btn btn--light btn--sm" data-led="status">Afficher le statut</button>
+      <button type="button" class="btn btn--light btn--sm" data-led="off">Éteindre</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="table keys-table">
+      <thead><tr><th>N°</th><th>Nom de la clé</th><th>Bâtiment</th><th>État</th><th class="right">LED</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="hint">Les modifications sont enregistrées dès que vous quittez la case (ou appuyez sur Entrée). Laisser le nom vide remet « Clé n°… ».</p>
+  <datalist id="buildings"></datalist>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="/static/admin/cles.js"></script>
+<script src="/static/admin/osk.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Données locales : base SQLite (noms, badges, journal), réglages, clé de session
+instance/
+*.db
+*.sqlite
+serveur/instance/
+
+# Secrets et configurations locales
+.env
+*.conf
+!deploiement/getty-autologin.conf
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Sauvegardes et archives
+*.bak
+*.bak[0-9]*
+*.zip
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store

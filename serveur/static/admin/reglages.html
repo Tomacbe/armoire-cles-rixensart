@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réglages — Armoire à clés</title>
+<link rel="stylesheet" href="/static/admin/badges.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar__left">
+    <img src="/static/kiosk/img/facility_blanc.png" alt="FACILITY" class="bar__logo">
+    <nav class="tabs" aria-label="Configuration">
+      <a href="/admin/badges" class="tab">Badges</a>
+      <a href="/admin/cles" class="tab">Clés</a>
+      <a href="/admin/journal" class="tab">Journal</a>
+      <a href="/admin/reglages" class="tab is-on" aria-current="page">Réglages</a>
+    </nav>
+  </div>
+  <nav class="bar__nav">
+    <a class="bar__link" href="/">Écran de l'armoire</a>
+    <a class="bar__btn" href="/admin/logout">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+      Quitter
+    </a>
+  </nav>
+</header>
+
+<main class="page page--narrow">
+  <div class="head"><div><h1>Réglages</h1><p class="lead">Nom, temporisations et veille de l'écran. Les nouvelles valeurs s'appliquent au badge suivant.</p></div></div>
+
+  <form class="card settings" id="form">
+    <div class="setting">
+      <div class="setting__text">
+        <label for="cabinet_name">Nom de l'armoire</label>
+        <p>Affiché en haut de l'écran d'accueil, après « Armoire à clés ».</p>
+      </div>
+      <div class="setting__input"><input type="text" id="cabinet_name" class="input text-input" maxlength="40" required autocomplete="off"></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="unlock_s">Ouverture de la porte (relais)</label>
+        <p>Durée pendant laquelle l'électro-aimant est relâché après un badge accepté. Passé ce délai, il se reverrouille et la porte se bloque dès qu'elle est refermée.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="unlock_s" class="input num-input" min="1" max="60" step="1" required><span>secondes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="session_s">Durée de la session</label>
+        <p>Temps pendant lequel les clés retirées sont attribuées à la personne qui a badgé (prolongé de 30 s à chaque mouvement de clé). Les LED des clés s'allument à l'ouverture de la porte et s'éteignent à sa fermeture.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="session_s" class="input num-input" min="30" max="1800" step="10" required><span>secondes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="door_alert_s">Alerte porte ouverte (pendant une session)</label>
+        <p>Au-delà de ce délai, l'écran passe en alerte rouge et bipe pour rappeler de refermer l'armoire.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="door_alert_s" class="input num-input" min="10" max="3600" step="5" required><span>secondes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="door_grace_s">Alerte porte ouverte sans badge</label>
+        <p>Porte ouverte sans session en cours (session terminée, porte forcée ou mal refermée) : délai avant l'alerte.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="door_grace_s" class="input num-input" min="5" max="600" step="5" required><span>secondes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="screen_sleep_min">Veille de l'écran</label>
+        <p>L'écran s'éteint après ce délai sans toucher, ni badge, ni mouvement de clé. Il se rallume quand on le touche ou qu'on présente un badge. Pas de veille pendant une session ou porte ouverte. 0 = jamais.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="screen_sleep_min" class="input num-input" min="0" max="60" step="1" required><span>minutes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
+        <label for="screen_rotation">Orientation de l'écran</label>
+        <p>Horizontal (paysage) ou vertical (portrait), selon le sens de montage de l'écran. L'image et le toucher tournent ensemble, aussitôt après « Enregistrer ».</p>
+      </div>
+      <div class="setting__input">
+        <select id="screen_rotation" class="input select-input">
+          <option value="normal">Horizontal</option>
+          <option value="left">Vertical (rotation à gauche)</option>
+          <option value="right">Vertical (rotation à droite)</option>
+          <option value="inverted">Horizontal retourné</option>
+        </select>
+      </div>
+    </div>
+    <p class="error" id="error" hidden></p>
+    <div class="settings__foot">
+      <button type="button" class="btn btn--outline" id="btn-test">Tester l'ouverture</button>
+      <button type="submit" class="btn btn--primary" id="btn-save">Enregistrer</button>
+    </div>
+  </form>
+
+  <section class="card settings system">
+    <h2 class="system__title">État du système</h2>
+    <dl class="system__list">
+      <div><dt>Serveur</dt><dd id="sys-server" class="is-ok">En ligne</dd></div>
+      <div><dt>Arduino</dt><dd id="sys-arduino">—</dd></div>
+      <div><dt>Porte</dt><dd id="sys-door">—</dd></div>
+      <div><dt>Horloge du mini-PC</dt><dd id="sys-clock">—</dd></div>
+    </dl>
+    <p class="error" id="sys-warn" hidden></p>
+    <div class="settings__foot">
+      <button type="button" class="btn btn--outline" id="btn-sound">Tester le son</button>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="/static/admin/reglages.js"></script>
+<script src="/static/admin/osk.js"></script>
+</body>
+</html>

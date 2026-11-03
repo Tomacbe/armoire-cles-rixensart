@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal — Armoire à clés</title>
+<link rel="stylesheet" href="/static/admin/badges.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar__left">
+    <img src="/static/kiosk/img/facility_blanc.png" alt="FACILITY" class="bar__logo">
+    <nav class="tabs" aria-label="Configuration">
+      <a href="/admin/badges" class="tab">Badges</a>
+      <a href="/admin/cles" class="tab">Clés</a>
+      <a href="/admin/journal" class="tab is-on" aria-current="page">Journal</a>
+      <a href="/admin/reglages" class="tab">Réglages</a>
+    </nav>
+  </div>
+  <nav class="bar__nav">
+    <a class="bar__link" href="/">Écran de l'armoire</a>
+    <a class="bar__btn" href="/admin/logout">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+      Quitter
+    </a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="head">
+    <div>
+      <h1>Journal</h1>
+      <p class="lead" id="counts">Chargement…</p>
+    </div>
+    <div class="head__actions">
+      <a class="btn btn--light" id="exp-journal" href="/api/journal/export.csv">Exporter le journal (CSV)</a>
+      <a class="btn btn--light" id="exp-loans" href="/api/loans/export.csv">Exporter les emprunts (CSV)</a>
+    </div>
+  </div>
+
+  <form class="filters-bar" id="filters">
+    <label>Du <input type="date" id="from" class="input"></label>
+    <label>Au <input type="date" id="to" class="input"></label>
+    <label>Type
+      <select id="type" class="input">
+        <option value="all">Tout</option>
+        <option value="keys">Clés (sorties / retours)</option>
+        <option value="badge">Badges</option>
+        <option value="door">Porte et sessions</option>
+        <option value="alert">Alertes</option>
+        <option value="admin">Configuration</option>
+      </select>
+    </label>
+    <label class="filters-bar__q">Recherche <input type="search" id="q" class="input" placeholder="Nom, clé, bâtiment, badge…"></label>
+    <button type="submit" class="btn btn--primary">Afficher</button>
+  </form>
+
+  <div class="card">
+    <table class="table">
+      <thead><tr><th>Date et heure</th><th>Type</th><th>Détails</th><th>Personne</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden>Aucun événement pour ces critères.</p>
+  </div>
+  <p class="hint">Les exports reprennent les mêmes filtres (dates, type, recherche) et s'ouvrent directement dans Excel. L'export des emprunts suit uniquement les dates.</p>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="/static/admin/journal.js"></script>
+<script src="/static/admin/osk.js"></script>
+</body>
+</html>
