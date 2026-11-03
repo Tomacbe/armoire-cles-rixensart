@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const $ = (id) => document.getElementById(id);
-  const FIELDS = ['unlock_s', 'session_s', 'door_alert_s', 'door_grace_s', 'screen_sleep_min'];
+  const FIELDS = ['unlock_s', 'session_s', 'door_alert_s', 'door_grace_s', 'screen_sleep_min', 'retro_s'];
   const TEXTS = ['cabinet_name', 'screen_rotation'];
   let toastTimer = null;
 

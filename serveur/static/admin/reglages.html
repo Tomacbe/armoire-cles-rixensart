@@ -67,6 +67,13 @@
     </div>
     <div class="setting">
       <div class="setting__text">
+        <label for="retro_s">Clé prise avant de badger (porte déjà ouverte)</label>
+        <p>Une 2e personne arrive pendant que la porte est ouverte, prend une clé puis badge : les clés retirées dans ce délai avant son badge lui sont attribuées (et non à la personne précédente). Les clés prises après son badge sont toujours à son nom. 0 = désactivé.</p>
+      </div>
+      <div class="setting__input"><input type="number" id="retro_s" class="input num-input" min="0" max="120" step="5" required><span>secondes</span></div>
+    </div>
+    <div class="setting">
+      <div class="setting__text">
         <label for="screen_sleep_min">Veille de l'écran</label>
         <p>L'écran s'éteint après ce délai sans toucher, ni badge, ni mouvement de clé. Il se rallume quand on le touche ou qu'on présente un badge. Pas de veille pendant une session ou porte ouverte. 0 = jamais.</p>
       </div>

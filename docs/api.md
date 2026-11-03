@@ -35,7 +35,7 @@ Serveur Flask sur le port 5000. Les routes marquées 🔒 demandent la session a
 | PATCH | `/api/keys/<n>` | `{"label","building"}` (nom vide = « Clé n°n », non paramétrée) |
 | GET | `/api/journal?from=&to=&type=&q=` | Journal filtré (`type` : `keys`, `badge`, `door`, `alert`, `admin`) |
 | GET | `/api/journal/export.csv`, `/api/loans/export.csv` | Exports CSV (`;`, UTF-8 BOM, heure belge) |
-| GET / PUT | `/api/settings` | `cabinet_name`, `unlock_s`, `session_s`, `door_alert_s`, `door_grace_s`, `screen_sleep_min`, `screen_rotation` (`normal`, `left`, `right`, `inverted`) |
+| GET / PUT | `/api/settings` | `cabinet_name`, `unlock_s`, `session_s`, `door_alert_s`, `door_grace_s`, `screen_sleep_min`, `retro_s`, `screen_rotation` (`normal`, `left`, `right`, `inverted`) |
 | GET | `/api/system` | Liaison Arduino, porte, heure du mini-PC, synchronisation NTP |
 | POST | `/api/settings/test-unlock` | Ouvre la porte avec la durée réglée |
 | POST | `/api/leds/test` | `{"mode": "status" / "identify" / "off", "key": n}` |

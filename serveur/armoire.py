@@ -19,7 +19,7 @@ import json
 import os
 import threading
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from flask import Blueprint, jsonify
@@ -39,7 +39,8 @@ SETTINGS_SPEC = {
     "session_s": (int(os.environ.get("KEYBOX_SESSION_S", "120")), 30, 1800),  # délai de session après le badge
     "door_alert_s": (120, 10, 3600),  # alerte si la porte reste ouverte plus longtemps pendant une session
     "door_grace_s": (15, 5, 600),     # alerte si la porte est ouverte sans session (forcée, session finie)
-    "screen_sleep_min": (5, 0, 60),   # mise en veille de l'écran après N minutes sans toucher (0 = jamais)
+    "screen_sleep_min": (5, 0, 60),
+    "retro_s": (30, 0, 120),          # porte déjà ouverte : clés prises juste avant un badge → attribuées à ce badge   # mise en veille de l'écran après N minutes sans toucher (0 = jamais)
 }
 CHOICE_SETTINGS = {
     # clé: (défaut, valeurs possibles)
@@ -305,13 +306,38 @@ def handle_badge(uid):
     now = time.time()
     settings = get_settings()
     with _lock:
+        prev = STATE["session"]
         STATE["session"] = {"user_id": user.id, "name": user.name, "uid": uid,
                             "started": now, "expires": now + settings["session_s"]}
         log("badge_scan", f"Badge reconnu : {user.name} (UID: {uid})", user.name)
+        if prev and prev["user_id"] != user.id:
+            log("session_end", f"Session de {prev['name']} terminée (badge de {user.name}, porte ouverte)", prev["name"])
+        reattribute_recent(user, prev, settings["retro_s"])
         db.session.commit()
     send({"cmd": "unlock", "ms": settings["unlock_s"] * 1000})
     refresh_leds()
     print(f"-> Accès autorisé pour {user.name}")
+
+
+def reattribute_recent(user, prev, window_s):
+    """Porte déjà ouverte : une 2e personne prend une clé puis badge. Les clés retirées dans les
+    window_s secondes avant son badge (pendant la session précédente ou sans session) lui sont attribuées."""
+    door = STATE["door"]
+    door_open = door["status"] == "OPEN" if door else prev is not None
+    if window_s <= 0 or not door_open:
+        return
+    since = datetime.utcnow() - timedelta(seconds=window_s)
+    others = [UNKNOWN] + ([prev["name"]] if prev and prev["user_id"] != user.id else [])
+    rows = (KeyLoan.query.filter(KeyLoan.returned_at.is_(None), KeyLoan.taken_at >= since,
+                                 KeyLoan.user_name.in_(others)).all())
+    for loan in rows:
+        slot = KeySlot.query.filter_by(key_number=loan.key_number).first()
+        ago = int((datetime.utcnow() - loan.taken_at).total_seconds())
+        old = loan.user_name
+        loan.user_name, loan.user_id = user.name, user.id
+        log("key_change", f"{key_desc(slot)} attribuée à {user.name} (retirée {ago} s avant son badge"
+                          + (f", pendant la session de {old})" if old != UNKNOWN else ", sans badge)"), user.name)
+        print(f"[Clé] #{loan.key_number} réattribuée {old} → {user.name}")
 
 
 def handle_key_change(pin, status):

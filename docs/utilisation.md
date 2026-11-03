@@ -15,6 +15,11 @@
 Si la porte reste ouverte trop longtemps, l'écran passe en alerte rouge avec un bip (« Couper le son 2 min »
 coupe le bip, pas l'alerte). L'écran ne clignote jamais : alerte en rouge fixe, clés à remettre en jaune fixe.
 
+**Deux personnes, porte ouverte** : si quelqu'un arrive pendant que la porte est encore ouverte, il doit
+badger aussi. Les clés qu'il prend après son badge sont à son nom ; celles qu'il a prises dans les 30 s
+précédant son badge (réglable) lui sont réattribuées, et le journal l'indique. La session de la personne
+précédente se termine à ce moment.
+
 **Historique d'une clé** : toucher sa carte dans la grille (qui l'a sortie, quand, quand elle est revenue).
 Le journal à droite défile au doigt ; « Haut de la liste » ramène aux derniers événements.
 

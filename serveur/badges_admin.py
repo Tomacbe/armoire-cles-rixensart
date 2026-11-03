@@ -675,7 +675,7 @@ def api_settings():
         names = {"unlock_s": "ouverture du relais", "session_s": "durée de session",
                  "door_alert_s": "alerte porte ouverte", "door_grace_s": "alerte porte sans badge",
                  "screen_sleep_min": "veille de l'écran", "cabinet_name": "nom de l'armoire",
-                 "screen_rotation": "orientation de l'écran"}
+                 "screen_rotation": "orientation de l'écran", "retro_s": "attribution au badge suivant"}
         units = {"screen_sleep_min": " min", "cabinet_name": "", "screen_rotation": ""}
         labels = {"normal": "horizontal", "left": "vertical (gauche)", "right": "vertical (droite)",
                   "inverted": "horizontal retourné"}
